@@ -3,7 +3,7 @@ from django.urls import path
 
 from main.apps import MainConfig
 from main.views import LessonCreateAPIView, LessonListAPIView, LessonRetrieveAPIView, LessonUpdateAPIView, \
-    LessonDestroyAPIView
+    LessonDestroyAPIView, PaymentsListAPIView, PaymentsRetrieveAPIView
 from users.views import UserViewSet
 
 
@@ -17,5 +17,8 @@ urlpatterns = [
     path('lesson/', LessonListAPIView.as_view(), name='lesson_view'),
     path('lesson/<int:pk>/', LessonRetrieveAPIView.as_view(), name='lesson_detail'),
     path('lesson/update/<int:pk>/', LessonUpdateAPIView.as_view(), name='lesson_update'),
-    path('moto/delite/<int:pk>/', LessonDestroyAPIView.as_view(), name='lesson_delite')
+    path('moto/delite/<int:pk>/', LessonDestroyAPIView.as_view(), name='lesson_delite'),
+
+    path('payments/', PaymentsListAPIView.as_view(), name='payments_list'),
+    path('payments/<int:pk>/', PaymentsRetrieveAPIView.as_view(), name='payments_get'),
 ] + router.urls
