@@ -3,8 +3,8 @@ from django.urls import path
 
 from main.apps import MainConfig
 from main.views import LessonCreateAPIView, LessonListAPIView, LessonRetrieveAPIView, LessonUpdateAPIView, \
-    LessonDestroyAPIView, PaymentsListAPIView, PaymentsRetrieveAPIView
-from users.views import UserViewSet
+    LessonDestroyAPIView
+from users.views import UserViewSet, PaymentsListAPIView, PaymentsRetrieveAPIView
 
 
 app_name = MainConfig.name
